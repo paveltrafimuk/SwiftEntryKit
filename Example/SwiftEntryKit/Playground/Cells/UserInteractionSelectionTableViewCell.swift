@@ -56,6 +56,8 @@ final class UserInteractionSelectionTableViewCell: SelectionTableViewCell {
             segmentedControl.selectedSegmentIndex = 2
         case .dismissEntry:
             segmentedControl.selectedSegmentIndex = 3
+        case .allowTouches:
+            break
         }
     }
     

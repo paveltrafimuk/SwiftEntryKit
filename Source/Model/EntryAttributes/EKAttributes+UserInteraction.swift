@@ -30,6 +30,8 @@ public extension EKAttributes {
             
             /** Touches are forwarded to the lower window (In most cases it would be the application main window that will handle it */
             case forward
+            
+            case allowTouches
         }
         
         var isResponsive: Bool {
