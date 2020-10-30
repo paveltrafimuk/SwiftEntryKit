@@ -204,6 +204,8 @@ extension EKRootViewController {
         case .dismissEntry:
             lastEntry?.animateOut(pushOut: false)
             fallthrough
+        case .allowTouches:
+            super.touchesEnded(touches, with: event)
         default:
             lastAttributes.screenInteraction.customTapActions.forEach { $0() }
         }
