@@ -740,11 +740,19 @@ extension EKContentView {
         if attributes.entryInteraction.isDelayExit && attributes.displayDuration.isFinite {
             outDispatchWorkItem?.cancel()
         }
+
+        if attributes.entryInteraction.isAllowedTouches {
+            super.touchesBegan(touches, with: event)
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if attributes.entryInteraction.isDelayExit && attributes.displayDuration.isFinite {
             scheduleAnimateOut()
+        }
+        
+        if attributes.entryInteraction.isAllowedTouches {
+            super.touchesEnded(touches, with: event)
         }
     }
     

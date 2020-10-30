@@ -52,6 +52,15 @@ public extension EKAttributes {
             }
         }
         
+        var isAllowedTouches: Bool {
+            switch defaultAction {
+            case .allowTouches:
+                return true
+            default:
+                return false
+            }
+        }
+        
         /** A default action that is executed when the entry or the screen are interacted by the user */
         public var defaultAction: Default
         
