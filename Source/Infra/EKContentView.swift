@@ -152,6 +152,8 @@ class EKContentView: UIView {
         contentView.layoutToSuperview(.left, .right, .top, .bottom)
         contentView.layoutToSuperview(.width, .height)
         
+        contentView.attributes.lifecycleEvents.wasAddedToWindow?()
+
         inConstraint = layout(to: messageInAnchor, of: superview!, offset: inOffset, priority: .defaultLow)
         
         // Set position constraints

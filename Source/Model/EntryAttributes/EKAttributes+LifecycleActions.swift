@@ -19,6 +19,8 @@ public extension EKAttributes {
          Might not get called in case another entry with a higher display priority is displayed.
          */
         public var willAppear: Event?
+
+        public var wasAddedToWindow: Event?
         
         /** Executed after the animation ends.
          Might not get called in case another entry with a higher display priority is displayed.
@@ -31,8 +33,13 @@ public extension EKAttributes {
         /** Executed after the entry disappears (After the animation ends) */
         public var didDisappear: Event?
         
-        public init(willAppear: Event? = nil, didAppear: Event? = nil, willDisappear: Event? = nil, didDisappear: Event? = nil) {
+        public init(willAppear: Event? = nil,
+                    wasAddedToWindow: Event? = nil,
+                    didAppear: Event? = nil,
+                    willDisappear: Event? = nil,
+                    didDisappear: Event? = nil) {
             self.willAppear = willAppear
+            self.wasAddedToWindow = wasAddedToWindow
             self.didAppear = didAppear
             self.willDisappear = willDisappear
             self.didDisappear = didDisappear
