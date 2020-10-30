@@ -83,7 +83,9 @@ class EKContentView: UIView {
     func setup(with contentView: EKEntryView) {
         
         self.contentView = contentView
-        
+                
+        setupKeyboardChangeIfNeeded()
+
         // Execute willAppear lifecycle action if needed
         contentView.attributes.lifecycleEvents.willAppear?()
         
@@ -104,8 +106,6 @@ class EKContentView: UIView {
         
         // Generate haptic feedback
         generateHapticFeedback()
-        
-        setupKeyboardChangeIfNeeded()
     }
     
     // Setup the scrollView initial position
